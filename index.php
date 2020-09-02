@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <!--Meta tags-->
@@ -9,8 +10,13 @@
     <title>McDiabetus</title>
     <!--linking to stylesheet-->
     <link rel="stylesheet" href="CSS/Page_Style.css">
+    <link rel="icon" href="IMG/Favicon.ico">
 </head>
+
 <body>
-    <header></header>
+    <header>
+        <img src="IMG/McArch.png" id="logo">
+        <h2>I'm loving it</h2>
+    </header>
 </body>
 </html>
