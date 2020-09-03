@@ -21,7 +21,7 @@
 
     <!--database box-->
     <div id="box">
-        <p>sample text</p>
+        <?php include("connection_test.php") ?>
     </div>
     <!--body end-->
 
