@@ -1,4 +1,14 @@
-<?php include("header.php")?>
+<?php 
+    
+    include("header.php");
+    
+    // linking database to site
+    $find_sql = "SELECT * FROM `menu`";
+    $find_query = mysqli_query($dbconnect, $find_sql);
+    $find_rs = mysqli_fetch_assoc($find_query);
+    $count = mysqli_num_rows($find_query);
+
+?>
 
     <!--body start-->
     <h1>About</h1>
@@ -21,7 +31,45 @@
 
     <!--database box-->
     <div id="box">
-        <?php include("connection_test.php") ?>
+        <?php 
+
+            if($count < 1) {
+        
+        ?>
+
+        <!--error handling-->
+        <div class="error">
+            <p>
+                Sorry! There are no results that match
+                your seach. Try using the search box again.
+                Thank you.
+            </p>
+        </div>
+
+        <?php 
+        
+        }
+
+        else {
+            do {
+        
+        ?>
+
+        <div class="results">
+            <?php echo $find_rs['Item']; ?>
+        </div>
+        <br/>
+
+        <?php
+
+                } //end of do
+
+                while($find_rs=mysqli_fetch_assoc($find_query));
+
+            } // end else
+        
+        ?>
+
     </div>
     <!--body end-->
 

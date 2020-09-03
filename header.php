@@ -1,3 +1,17 @@
+<?php 
+
+    session_start();
+    include("config.php");
+
+    $dbconnect = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
+    
+    if(mysqli_connect_errno()) {
+        echo "Connection failded:".mysqli_connect_error();
+        exit;
+    }
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
