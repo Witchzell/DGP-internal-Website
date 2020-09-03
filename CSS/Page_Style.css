@@ -42,6 +42,28 @@ h1 {
     text-align: justify;
 }
 
+/*search*/
+
+.search {
+    display: grid;
+    grid-template-columns: 15% 50% auto 15%;
+    padding-bottom: 2.5%;
+}
+
+input[type=text] {
+    grid-column: 2;
+    padding: 1%;
+    border-color: #E31919;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+ #search_img {
+    grid-column: 3;
+    width: 15%;
+    padding-left: 10%;
+}
+
 /*database box*/
 
 #box {

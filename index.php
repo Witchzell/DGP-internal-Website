@@ -1,5 +1,5 @@
 <?php include("header.php")?>
-    
+
     <!--body start-->
     <h1>About</h1>
     <div class="gap">
@@ -10,7 +10,14 @@
             Phasellus mollis, ipsum vitae faucibus ultricies, eros sapien gravida neque.
         </p>
     </div>
+
     <h1>Database</h1>
+
+    <!--search-->
+    <div class="search">
+        <input type="text" placeholder="Search..."/>
+        <img id="search_img" src="IMG/Search.png">
+    </div>
 
     <!--database box-->
     <div id="box">
