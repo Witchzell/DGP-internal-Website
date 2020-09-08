@@ -75,14 +75,37 @@ input[type=text] {
     padding-bottom: 2.5%;
     background-color: #fdc322;
     border-radius: 10px;
-    box-shadow: inset 0 0 10px -3px #00000081;
+    box-shadow: inset 0 0 10px 0 #00000081;
 }
 
 .results {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     background-color: #ffdf5d;
     padding: 1%;
     box-shadow: 6px 5px 6px -3px #00000081;
 }
+
+.s_results {
+    font-weight: bold;
+    grid-row: 1;
+    grid-column: 1;
+    
+}
+
+.h_results {
+    font-weight: normal;
+    grid-row: 1;
+    grid-column: 2;
+    
+}
+
+.content {
+    display: none;
+}
+
+/*footer*/
 
 footer {
     background-color: #E31919;

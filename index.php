@@ -52,12 +52,23 @@
 
         else {
             do {
-        
+            echo '<script src="JS/Modal_Box.js"></script>'
         ?>
 
         <div class="results">
-            <?php echo $find_rs['Item']; ?>
+
+            <span class="s_results">Item: </span>
+            <span class="h_results"><?php echo $find_rs['Item']; ?></span>
+            <?php echo $find_rs['CategoryID']; ?>
+
+            <button onclick="myFunction()" class="btn">More info</button>
+
+            <div class="content">
+                <p>end the pain</p>
+            </div>
+
         </div>
+        
         <br/>
 
         <?php
@@ -66,7 +77,7 @@
 
                 while($find_rs=mysqli_fetch_assoc($find_query));
 
-            } // end else
+            } //end else
         
         ?>
 
