@@ -30,7 +30,7 @@
 <body>
     <!--header start-->
     <header>
-        <img src="IMG/McArch.png" id="logo">
+        <img src="IMG/McArch.png" id="logo" alt="logo">
         <h2>I'm loving it</h2>
     </header>
     <!--header finihed-->
