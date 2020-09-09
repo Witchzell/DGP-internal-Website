@@ -50,7 +50,7 @@ h1 {
     padding-bottom: 2.5%;
 }
 
-input[type=text] {
+#search_bar {
     grid-column: 2;
     padding: 1%;
     border-color: #E31919;
@@ -59,10 +59,16 @@ input[type=text] {
 }
 
  #search_img {
+    font-family: FontAwesome, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     grid-column: 3;
-    width: 15%;
-    padding-left: 10%;
+    border-style: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #E31919;
+    background-color: #f5f5f5;
 }
+
+#search_img:hover {color: #a51010;}
 
 /*database box*/
 

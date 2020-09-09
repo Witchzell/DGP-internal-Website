@@ -2,8 +2,12 @@
     
     include("header.php");
     
+    $search = $_POST['search'];
+
     // linking database to site
-    $find_sql = "SELECT * FROM `menu` JOIN category ON (category.CategoryID = menu.CategoryID)";
+    $find_sql = "SELECT * FROM `menu` 
+        JOIN category ON (category.CategoryID = menu.CategoryID)
+        WHERE `Item` LIKE '%$search%'";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -24,66 +28,15 @@
     <h1>Database</h1>
 
     <!--search-->
-    <div class="search">
-        <input type="text" placeholder="Search..."/>
-        <img id="search_img" src="IMG/Search.png">
-    </div>
+    <form method="post" enctype="multipart/form-data" class="search">
+
+        <input type="text" name="search" required placeholder="Search..." id="search_bar"/>
+        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
+        
+    </form>
 
     <!--database box-->
-    <div id="box">
-        <?php 
-
-            if($count < 1) {
-        
-        ?>
-
-        <!--error handling-->
-        <div class="error">
-            <p>
-                Sorry! There are no results that match
-                your seach. Try using the search box again.
-                Thank you.
-            </p>
-        </div>
-
-        <?php 
-        
-        }
-
-        else {
-            do {
-            echo '<script src="JS/Modal_Box.js"></script>'
-        ?>
-
-        <div class="results">
-
-            <span class="s_item">Item: </span>
-            <span class="h_results"><?php echo $find_rs['Item']; ?></span>
-            <span class="s_type">Type: </span>
-            <span class="h_type"><?php echo $find_rs['Category']; ?></span>
-
-            <button onclick="myFunction(<?php echo $find_rs['ID']; ?>)" class="btn">More info</button>
-
-            <div class="<?php echo $find_rs['ID']; ?>" id="content">
-            
-                <?php echo $find_rs['ID']; ?>
-                <p>epic</p>
-
-            </div>
-
-        </div>
-        
-        <br/>
-
-        <?php
-
-                } //end of do
-
-                while($find_rs=mysqli_fetch_assoc($find_query));
-
-            } //end else
-
-        ?>
+    <?php include('results.php') ?>
 
     </div>
     <!--body end-->
