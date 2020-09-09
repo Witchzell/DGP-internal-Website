@@ -80,28 +80,43 @@ input[type=text] {
 
 .results {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 5% 60% 5% 15% 15%;
     grid-template-rows: auto auto auto;
     background-color: #ffdf5d;
     padding: 1%;
     box-shadow: 6px 5px 6px -3px #00000081;
 }
 
-.s_results {
+.s_item {
     font-weight: bold;
     grid-row: 1;
     grid-column: 1;
-    
+}
+
+.s_type {
+    font-weight: bold;
+    grid-row: 1;
+    grid-column: 3;
 }
 
 .h_results {
     font-weight: normal;
     grid-row: 1;
-    grid-column: 2;
-    
+    grid-column: 2;   
 }
 
-.content {
+.h_type {
+    font-weight: normal;
+    grid-row: 1;
+    grid-column: 4;   
+}
+
+.btn {
+    grid-row: 1;
+    grid-column: 5;
+}
+
+#content {
     display: none;
 }
 

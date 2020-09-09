@@ -3,7 +3,7 @@
     include("header.php");
     
     // linking database to site
-    $find_sql = "SELECT * FROM `menu`";
+    $find_sql = "SELECT * FROM `menu` JOIN category ON (category.CategoryID = menu.CategoryID)";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -57,14 +57,18 @@
 
         <div class="results">
 
-            <span class="s_results">Item: </span>
+            <span class="s_item">Item: </span>
             <span class="h_results"><?php echo $find_rs['Item']; ?></span>
-            <?php echo $find_rs['CategoryID']; ?>
+            <span class="s_type">Type: </span>
+            <span class="h_type"><?php echo $find_rs['Category']; ?></span>
 
-            <button onclick="myFunction()" class="btn">More info</button>
+            <button onclick="myFunction(<?php echo $find_rs['ID']; ?>)" class="btn">More info</button>
 
-            <div class="content">
-                <p>end the pain</p>
+            <div class="<?php echo $find_rs['ID']; ?>" id="content">
+            
+                <?php echo $find_rs['ID']; ?>
+                <p>epic</p>
+
             </div>
 
         </div>
@@ -78,7 +82,7 @@
                 while($find_rs=mysqli_fetch_assoc($find_query));
 
             } //end else
-        
+
         ?>
 
     </div>
