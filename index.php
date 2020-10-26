@@ -8,9 +8,9 @@
         
     }
 
-    // linking database to site
+    //Linking database to site
     $find_sql = "SELECT * FROM `menu` 
-        JOIN category ON (category.CategoryID = menu.CategoryID)";
+        JOIN category ON (category.CategoryID = menu.CategoryID) LIMIT 20";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -40,6 +40,12 @@
 
     <!--database box-->
     <?php include('results.php') ?>
+    </div>
+
+    </br>
+
+    <div class="gap">
+        <a href="form.php"><button class="form">Go to Creation Form</button></a>
     </div>
 
     <!--body end-->

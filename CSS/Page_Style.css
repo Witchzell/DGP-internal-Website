@@ -42,6 +42,18 @@ h1 {
     text-align: justify;
 }
 
+a .form {
+    padding: 0.5%;
+    border-style: none;
+    background-color: #E31919;
+    color: #FFCF0F;
+    cursor: pointer;
+}
+
+a .form:hover {
+    background-color: #a51010;
+}
+
 /*search*/
 
 .search {
