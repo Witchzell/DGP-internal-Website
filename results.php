@@ -31,65 +31,55 @@
             <span class="h_type"><?php echo $find_rs['Category']; ?></span>
 
             <button onclick="myFunction(<?php echo $find_rs['ID']; ?>)" class="btn">More info</button>
+        
+        </div>
+        
+        <div class="results_bt">
 
             <div class="<?php echo $find_rs['ID']; ?>" id="content">
-                
-                <span class="s_con">Serving Size: </span>
-                <?php echo $find_rs['Serving_Size']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Calories:</span> 
-                <?php echo $find_rs['Calories']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Sugars:</span> 
-                <?php echo $find_rs['Sugars']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Protein:</span> 
-                <?php echo $find_rs['Protein']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Saturated Fat:</span> 
-                <?php echo $find_rs['Saturated_Fat']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Saturated Fat Daily %:</span>
-                <?php echo $find_rs['Saturated_Fat_Daily%']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Cholesterol:</span>
-                <?php echo $find_rs['Cholesterol']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Cholesterol Daily %:</span>
-                <?php echo $find_rs['Cholesterol_Daily%']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Carbohydrates:</span>
-                <?php echo $find_rs['Carbohydrates']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Carbohydrates Daily %:</span>
-                <?php echo $find_rs['Carbohydrates_Daily%']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Dietary Fibre:</span>
-                <?php echo $find_rs['Dietary_Fibre']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Dietary Fibre Daily %:</span>
-                <?php echo $find_rs['Dietary_Fibre_Daily%']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Total Fat:</span>
-                <?php echo $find_rs['Total_Fat']; ?>
-                <br/>
-                <br/>
-                <span class="s_con">Total Fat Daily %:</span>
-                <?php echo $find_rs['Total_Fat_Daily%']; ?>
-                
+                    
+                <span class="s_con_left1">Serving Size: </span>
+                <div class="con_left"> <?php echo $find_rs['Serving_Size']; ?> </div>
 
+                <span class="s_con_left2">Calories:</span> 
+                <?php echo $find_rs['Calories']; ?>
+                
+                <span class="s_con_left3">Sugars:</span> 
+                <?php echo $find_rs['Sugars']; ?>
+                
+                <span class="s_con_left4">Protein:</span> 
+                <?php echo $find_rs['Protein']; ?>
+                
+                <span class="s_con_left5">Saturated Fat:</span> 
+                <?php echo $find_rs['Saturated_Fat']; ?>
+                
+                <span class="s_con_left6">Saturated Fat Daily %:</span>
+                <?php echo $find_rs['Saturated_Fat_Daily%']; ?>
+                
+                <span class="s_con_left7">Cholesterol:</span>
+                <?php echo $find_rs['Cholesterol']; ?>
+                
+                <span class="s_con_right1">Cholesterol Daily %:</span>
+                <?php echo $find_rs['Cholesterol_Daily%']; ?>
+                
+                <span class="s_con_right2">Carbohydrates:</span>
+                <?php echo $find_rs['Carbohydrates']; ?>
+                
+                <span class="s_con_right3">Carbohydrates Daily %:</span>
+                <?php echo $find_rs['Carbohydrates_Daily%']; ?>
+                
+                <span class="s_con_right4">Dietary Fibre:</span>
+                <?php echo $find_rs['Dietary_Fibre']; ?>
+                
+                <span class="s_con_right5">Dietary Fibre Daily %:</span>
+                <?php echo $find_rs['Dietary_Fibre_Daily%']; ?>
+                
+                <span class="s_con_right6">Total Fat:</span>
+                <?php echo $find_rs['Total_Fat']; ?>
+                
+                <span class="s_con_right7">Total Fat Daily %:</span>
+                <?php echo $find_rs['Total_Fat_Daily%']; ?>
+                    
             </div>
 
         </div>

@@ -2,8 +2,30 @@
     
     include("header.php");
     
+    //The stuff they are incrementing
+    $Item = "";
+    $Serving_Size = "";
+    $Calories = "";
+    $Total_Fat = "";
+    $Total_Fat_Daily = "";
+    $Saturated_Fat = "";
+    $Saturated_Fat_Daily = "";
+    $Cholesterol = "";
+    $Cholesterol_Daily = "";
+    $Carbohydrates = "";
+    $Carbohydrates_Daily = "";
+    $Dietary_Fiber = "";
+    $Dietary_Fiber_Daily = "";
+    $Sugars = "";
+    $Protein = "";
+    $CategoryID = "";
 
+    $has_errors = "no";
 
+    //Form Submiter
+    if ($_SERVER["REQUEST_METHOD"] != "POST") {
+        echo "Submitted";
+    }
 
 ?>
 
@@ -24,6 +46,14 @@
     <div class="gap">
         <form method="post" enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
             
+            <!--Item increment-->
+            <p>
+                <input type="text" name="name_of_meal" value="<?php echo $Item; ?>" required placeholder="Name of Meal..." /> *
+            </p>
+
+            <!--Submit-->
+            <input type="submit" name="search_sub" value="Submit" />
+
         </form>
     </div>
 

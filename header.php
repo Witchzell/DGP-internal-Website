@@ -24,6 +24,7 @@
     <title>McDonalds Nutrition Info</title>
     <!--linking to stylesheet-->
     <link rel="stylesheet" href="CSS/Page_Style.css">
+    <link rel="stylesheet" href="CSS/Content.css">
     <link rel="icon" href="IMG/Favicon.ico">
 </head>
 
