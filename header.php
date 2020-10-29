@@ -31,7 +31,11 @@
 <body>
     <!--header start-->
     <header>
-        <img src="IMG/McArch.png" id="logo" alt="logo">
-        <h2>I'm loving it</h2>
+        <div class="bk_img">
+            <div class="container">
+                <img src="IMG/McArch.png" id="logo" alt="logo">
+                <h2>I'm wuving it! OwO</h2>
+            </div>
+        </div>
     </header>
     <!--header finihed-->

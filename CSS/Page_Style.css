@@ -9,10 +9,21 @@ body {
 /*header*/
 
 header {
-    background-color: #E31919;
+    box-shadow: 6px 5px 6px -3px #00000081;
+}
+
+.bk_img {
+    background-image: url("food.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
     display: grid;
     grid-template-columns: 10% 20% auto;
-    box-shadow: 6px 5px 6px -3px #00000081;
 }
 
 #logo {
@@ -157,11 +168,19 @@ a #clear {
 
 /*footer*/
 
+.bk_img_f {
+    background-image: url("Mr.Wood.jpg");
+    padding: 25px;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 footer {
-    background-color: #E31919;
     color: #FFCF0F;
     padding-top: 10px;
-    padding-bottom: 10px;
     text-align: center;
 }
 
