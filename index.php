@@ -8,9 +8,11 @@
         
     }
 
+    $category = mysqli_real_escape_string($dbconnect, isset($_POST['Category']));
+
     //Linking database to site
     $find_sql = "SELECT * FROM `menu` 
-        JOIN category ON (category.CategoryID = menu.CategoryID) LIMIT 20";
+        JOIN category ON (category.CategoryID = menu.CategoryID)";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
@@ -31,12 +33,49 @@
     <h1>Database</h1>
 
     <!--search-->
+    <div class="search">
+
     <form method="post" action="search.php" enctype="multipart/form-data" class="search">
 
         <input type="text" name="search" required placeholder="Search..." id="search_bar" />
-        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
+        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" title="search" />
         
     </form>
+
+    <!--filter-->
+    <div class="f_frame">
+        
+        <span title="filter" class="filter_btn" onclick="btnDropdown()"> &upsih; </span>
+        <form method="post" action="advanced.php" enctype="multipart/form-data" class="filter_content" id="dropdown">
+
+        <?php 
+                
+            $category_sql = "SELECT * FROM `category` ORDER BY `Category` ASC";
+            $category_query = mysqli_query($dbconnect, $category_sql);
+            $category_rs = mysqli_fetch_assoc($category_query);
+
+            do {
+                ?>
+
+                <input type="checkbox" value="<?php echo $category_rs['Category']; ?>" name="<?php echo $category_rs['Category']; ?>">
+                <label for="<?php echo $category_rs['Category']; ?>" class="label_ch"> 
+                    <?php echo $category_rs['Category']; ?> </br> 
+                </label>
+
+                <?php
+            }
+
+            while($category_rs = mysqli_fetch_assoc($category_query))
+
+        ?>
+
+        <input type="submit" name="search_ad" value="&#xf002;" id="search_img_filter" />
+            
+        </form>
+
+    </div>
+
+    </div>
 
     <!--database box-->
     <?php include('results.php') ?>

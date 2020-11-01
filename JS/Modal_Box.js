@@ -8,3 +8,7 @@ function myFunction(input) {
       x.style.display = "none";
     }
 }
+
+function btnDropdown() {
+    document.getElementById("dropdown").classList.toggle("show");  
+}

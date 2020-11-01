@@ -69,12 +69,14 @@ a .form:hover {
 
 .search {
     display: grid;
-    grid-template-columns: 15% 50% auto 15%;
+    grid-template-columns: 80% auto ;
     padding-bottom: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #search_bar {
-    grid-column: 2;
+    grid-column: 1;
     padding: 1%;
     border-color: #E31919;
     border-style: solid;
@@ -83,7 +85,7 @@ a .form:hover {
 
  #search_img {
     font-family: FontAwesome, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    grid-column: 3;
+    grid-column: 2;
     border-style: none;
     cursor: pointer;
     font-size: 30px;
@@ -105,6 +107,45 @@ a #clear {
 }
 
 #clear:hover {background-color: #a51010;}
+
+/*advanced search*/
+
+.f_frame {
+    color: #E31919;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    grid-column: 2;
+}
+
+.f_frame:hover {color: #a51010;}
+
+.filter_content {
+    display: none;
+    cursor: auto;
+    position: absolute;
+    min-width: 160px;
+    padding: 5px;
+    z-index: 1;
+    background-color: #e7e7e7;
+    box-shadow: 6px 5px 6px -3px #00000081
+}
+
+#search_img_filter {
+    font-family: FontAwesome, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    border-style: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #E31919;
+    background-color: #e7e7e7;
+}
+
+.show {display: block;}
+
+.label_ch {
+    font-size: 20px;
+    color: black;
+}
 
 /*database box*/
 
@@ -170,7 +211,7 @@ a #clear {
 
 .bk_img_f {
     background-image: url("Mr.Wood.jpg");
-    padding: 25px;
+    padding: 20px;
     height: 100%;
     background-attachment: fixed;
     background-position: center;

@@ -20,7 +20,7 @@
 
         else {
             do {
-            echo '<script src="JS/Modal_Box.js"></script>'
+                
         ?>
 
         <div class="results">

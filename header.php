@@ -25,6 +25,7 @@
     <!--linking to stylesheet-->
     <link rel="stylesheet" href="CSS/Page_Style.css">
     <link rel="stylesheet" href="CSS/Content.css">
+    <script src="JS/Modal_Box.js"></script>
     <link rel="icon" href="IMG/Favicon.ico">
 </head>
 
