@@ -2,25 +2,33 @@
     
     include("header.php");
     
-    if (isset($_POST['search'])) {
+    $search = $_POST['search'];
 
-        $search = $_POST['search'];
-        
-    }
-
-    $category = mysqli_real_escape_string($dbconnect, isset($_POST['Category']));
-
-    //Linking database to site
+    // linking database to site
     $find_sql = "SELECT * FROM `menu` 
-        JOIN category ON (category.CategoryID = menu.CategoryID)";
+        JOIN category ON (category.CategoryID = menu.CategoryID)
+        WHERE `Item` LIKE '%$search%' OR `Category` LIKE '%$search%'";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
 
+    $ch = " WHERE ";
+    $sql = "SELECT * FROM `Category` ";
+    if(isset($_POST['search_ad'])) {
+        if(isset($_POST['$chbox[]'])) {
+            foreach((array) $_POST['$chbox[]'] as $name) {
+                if(!empty($name)) {
+                    $sql .= $ch."`".$name."` LIKE '%{$name}%'";
+                    $ch = " OR ";
+                }
+            }
+        }
+    }
+
 ?>
 
     <!--body start-->
-    <h1>About</h1>
+    <h1>About <?php echo $sql; ?></h1>
     <div class="gap">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consequat odio 
@@ -37,22 +45,18 @@
 
     <form method="post" action="search.php" enctype="multipart/form-data" class="search">
 
-        <input type="text" name="search" required placeholder="Search..." id="search_bar" />
-        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" title="search" />
-        
+        <input type="text" name="search" required placeholder="Search..." id="search_bar"/>
+        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
+
     </form>
 
     <!--filter-->
     <?php include('filter.php') ?>
 
+    <a href="index.php"><button id="clear">Clear Search</button></a>
+
     <!--database box-->
     <?php include('results.php') ?>
-    </div>
-
-    </br>
-
-    <div class="gap">
-        <a href="form.php"><button class="form">Go to Creation Form</button></a>
     </div>
 
     <!--body end-->

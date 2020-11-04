@@ -35,7 +35,7 @@
         <div class="bk_img">
             <div class="container">
                 <img src="IMG/McArch.png" id="logo" alt="logo">
-                <h2>I'm wuving it! OwO</h2>
+                <h2>I'm dying! x-x</h2>
             </div>
         </div>
     </header>
