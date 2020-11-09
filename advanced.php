@@ -5,30 +5,30 @@
     $search = $_POST['search'];
 
     // linking database to site
-    $find_sql = "SELECT * FROM `menu` 
-        JOIN category ON (category.CategoryID = menu.CategoryID)
-        WHERE `Item` LIKE '%$search%' OR `Category` LIKE '%$search%'";
-    $find_query = mysqli_query($dbconnect, $find_sql);
-    $find_rs = mysqli_fetch_assoc($find_query);
-    $count = mysqli_num_rows($find_query);
 
+    $b = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
     $ch = " WHERE ";
-    $sql = "SELECT * FROM `Category` ";
+    $sql = "SELECT * FROM `menu` 
+    JOIN category ON (category.CategoryID = menu.CategoryID) ";
     if(isset($_POST['search_ad'])) {
-        if(isset($_POST['$chbox[]'])) {
-            foreach((array) $_POST['$chbox[]'] as $name) {
+        if(isset($_POST[1])) {
+            foreach((array) $_POST[$b[1]] as $name) {
                 if(!empty($name)) {
-                    $sql .= $ch."`".$name."` LIKE '%{$name}%'";
+                    $sql .= $ch."`Category` LIKE '%".$name."%'";
                     $ch = " OR ";
                 }
             }
         }
     }
 
+    $find_sql = "$sql";
+    $find_query = mysqli_query($dbconnect, $find_sql);
+    $find_rs = mysqli_fetch_assoc($find_query);
+    $count = mysqli_num_rows($find_query);
 ?>
 
     <!--body start-->
-    <h1>About <?php echo $sql; ?></h1>
+    <h1>About</h1>
     <div class="gap">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consequat odio 
@@ -43,12 +43,12 @@
     <!--search-->
     <div class="search">
 
-    <form method="post" action="search.php" enctype="multipart/form-data" class="search">
+        <form method="post" action="search.php" enctype="multipart/form-data" class="search">
 
-        <input type="text" name="search" required placeholder="Search..." id="search_bar"/>
-        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
+            <input type="text" name="search" required placeholder="Search..." id="search_bar"/>
+            <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
 
-    </form>
+        </form>
 
     <!--filter-->
     <?php include('filter.php') ?>

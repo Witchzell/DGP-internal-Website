@@ -35,12 +35,12 @@
     <!--search-->
     <div class="search">
 
-    <form method="post" action="search.php" enctype="multipart/form-data" class="search">
+        <form method="post" action="search.php" enctype="multipart/form-data" class="search">
 
-        <input type="text" name="search" required placeholder="Search..." id="search_bar" />
-        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" title="search" />
-        
-    </form>
+            <input type="text" name="search" required placeholder="Search..." id="search_bar" />
+            <input type="submit" name="search_sub" value="&#xf002;" id="search_img" title="search" />
+            
+        </form>
 
     <!--filter-->
     <?php include('filter.php') ?>

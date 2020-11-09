@@ -28,13 +28,16 @@
     <h1>Database</h1>
 
     <!--search-->
-    
-    <form method="post" action="search.php" enctype="multipart/form-data" class="search">
+    <div class="search">
 
-        <input type="text" name="search" required placeholder="Search..." id="search_bar"/>
-        <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
+        <form method="post" action="search.php" enctype="multipart/form-data" class="search">
 
-    </form>
+            <input type="text" name="search" required placeholder="Search..." id="search_bar"/>
+            <input type="submit" name="search_sub" value="&#xf002;" id="search_img" />
+
+        </form>
+
+    <?php include('filter.php'); ?>
 
     <a href="index.php"><button id="clear">Clear Search</button></a>
 

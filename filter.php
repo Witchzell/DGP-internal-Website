@@ -8,16 +8,18 @@
             $category_sql = "SELECT * FROM `category` ORDER BY `Category` ASC";
             $category_query = mysqli_query($dbconnect, $category_sql);
             $category_rs = mysqli_fetch_assoc($category_query);
+            $a = 0;
 
             do {
                 ?>
 
-                <input type="checkbox" value="<?php echo $category_rs['Category']; ?>" name="<?php echo $category_rs['Category']; ?>">
+                <input type="checkbox" value="<?php echo $category_rs['Category']; ?>" name="1">
                 <label for="<?php echo $category_rs['Category']; ?>" class="label_ch"> 
-                    <?php echo $category_rs['Category']; ?> </br> 
+                    <?php echo $category_rs['Category']; echo $a; ?> </br> 
                 </label>
 
                 <?php
+                $a += 1;
             }
 
             while($category_rs = mysqli_fetch_assoc($category_query));
@@ -31,18 +33,3 @@
     </div>
 
     </div>
-    
-<?php
-    //$ch = " WHERE ";
-    //$sql = "SELECT * FROM `Category` ";
-    //if(isset($_POST['search_ad'])) {
-    //    if(isset($_POST['Breakfast'])) {
-    //        foreach((array) $_POST['Breakfast'] as $name) {
-    //            if(!empty($name)) {
-    //                $sql .= $ch."`".$name."` LIKE '%{$name}%'";
-    //                $ch = " OR ";
-    //            }
-    //        }
-    //    }
-    //}
-?>
