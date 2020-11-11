@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Find out nutrisional value of Mcdonals food">
     <meta name="author" content="177013 Squad">
-    <title>McDonalds Nutrition Info</title>
+    <title>Wakdonalds Nutrition Info</title>
     <!--linking to stylesheet-->
     <link rel="stylesheet" href="CSS/Page_Style.css">
     <link rel="stylesheet" href="CSS/Content.css">
@@ -37,7 +37,7 @@
                 <div class="bk_img">
                     <div class="container">
                         <a href="index.php"><img src="IMG/McArch.png" id="logo" alt="logo"></a>
-                        <h2>Wakdonalds</h2>
+                        <h2>Know what you eat</h2>
                     </div>
                 </div>
             </header>
