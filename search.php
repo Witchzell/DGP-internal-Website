@@ -1,16 +1,23 @@
 <?php 
-    
-    include("header.php");
-    
-    $search = $_POST['search'];
 
-    // linking database to site
+    include('header.php');
+
+    //Item Finding
+    if(isset($_POST['search'])) {
+                
+        $search = $_POST['search'];
+
+    }
+
+
+    //linking database to site
     $find_sql = "SELECT * FROM `menu` 
         JOIN category ON (category.CategoryID = menu.CategoryID)
         WHERE `Item` LIKE '%$search%' OR `Category` LIKE '%$search%'";
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
+
 
 ?>
 
@@ -47,6 +54,8 @@
 
     <!--body end-->
 
+</div>
 <?php include("footer.php")?>
+</div>
 </body>
 </html>

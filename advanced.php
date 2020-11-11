@@ -5,7 +5,8 @@
     // linking database to site
     $checkbox = $_POST['check'];
     
-    $ch = "WHERE";
+    $ch = " WHERE";
+    $sql = "";
     
     if($_POST["Submit"]=="Submit"){
         for($i=0; $i<sizeof($checkbox); $i++) {
@@ -13,7 +14,7 @@
             $ch = " OR ";
         }
     }
-    
+
     $find_sql = "SELECT * FROM `menu` JOIN category ON (category.CategoryID = menu.CategoryID)".$sql;
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
@@ -22,7 +23,7 @@
 ?>
 
     <!--body start-->
-    <h1>About <?php echo $find_sql ?></h1>
+    <h1>About</h1>
     <div class="gap">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consequat odio 
@@ -54,7 +55,8 @@
     </div>
 
     <!--body end-->
-
+</div>
 <?php include("footer.php")?>
+</div>
 </body>
 </html>

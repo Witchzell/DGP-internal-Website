@@ -2,7 +2,7 @@
     
     include("header.php");
     
-    if (isset($_POST['search'])) {
+    if(isset($_POST['search'])) {
 
         $search = $_POST['search'];
         
@@ -56,7 +56,8 @@
     </div>
 
     <!--body end-->
-
+</div>
 <?php include("footer.php")?>
+</div>
 </body>
 </html>

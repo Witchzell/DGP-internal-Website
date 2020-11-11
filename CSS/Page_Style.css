@@ -208,7 +208,80 @@ a #clear {
 
 .btn:hover {background-color: #da8d1a;}
 
+/*Form*/
+.required {
+    color: red;
+}
+
+#form_grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto;
+}
+
+.left {
+    border-color: #E31919;
+    border-style: solid;
+    font-weight: normal;
+    grid-row: 1;
+    grid-column: 1;
+    padding-right: 10%;
+    padding: 2px;
+}
+
+.right {
+    padding: 2px;
+    padding-right: 10%;
+    border-color: #E31919;
+    border-style: solid;
+    font-weight: normal;
+    grid-row: 8;
+    grid-column: 2;
+}
+
+#btns {
+    border: none;
+}
+
+#btn1, #btn2 {
+    color: #fdc322;
+    background-color: #E31919;
+    padding: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    border: none;
+    cursor: pointer;
+}
+
+#btn1 {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+#btn1:hover, #btn2:hover {
+    background-color: #a51010;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    display: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+  
+
 /*footer*/
+
+.page_container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content_wrapper {
+    padding-bottom: 90px;
+}
 
 .bk_img_f {
     background-image: url("Mr.Wood.jpg");
@@ -224,5 +297,8 @@ footer {
     color: #FFCF0F;
     padding-top: 10px;
     text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
