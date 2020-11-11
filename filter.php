@@ -8,26 +8,24 @@
             $category_sql = "SELECT * FROM `category` ORDER BY `Category` ASC";
             $category_query = mysqli_query($dbconnect, $category_sql);
             $category_rs = mysqli_fetch_assoc($category_query);
-            $a = 0;
 
             do {
                 ?>
 
-                <input type="checkbox" value="<?php echo $category_rs['Category']; ?>" name="1">
+                <input type="checkbox" value="<?php echo $category_rs['Category']; ?>" name="check[ ]">
                 <label for="<?php echo $category_rs['Category']; ?>" class="label_ch"> 
-                    <?php echo $category_rs['Category']; echo $a; ?> </br> 
+                    <?php echo $category_rs['Category'];?></br> 
                 </label>
 
                 <?php
-                $a += 1;
             }
 
             while($category_rs = mysqli_fetch_assoc($category_query));
 
         ?>
 
-        <input type="submit" name="search_ad" value="&#xf002;" id="search_img_filter" />
-            
+        <input type="submit" name="Submit" value="Submit" id="search_img_filter" />
+        <!--&#xf002;-->
         </form>
 
     </div>

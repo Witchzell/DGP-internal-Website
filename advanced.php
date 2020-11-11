@@ -1,34 +1,28 @@
 <?php 
     
     include("header.php");
-    
-    $search = $_POST['search'];
 
     // linking database to site
-
-    $b = array(0, 1, 2, 3, 4, 5, 6, 7, 8);
-    $ch = " WHERE ";
-    $sql = "SELECT * FROM `menu` 
-    JOIN category ON (category.CategoryID = menu.CategoryID) ";
-    if(isset($_POST['search_ad'])) {
-        if(isset($_POST[1])) {
-            foreach((array) $_POST[$b[1]] as $name) {
-                if(!empty($name)) {
-                    $sql .= $ch."`Category` LIKE '%".$name."%'";
-                    $ch = " OR ";
-                }
-            }
+    $checkbox = $_POST['check'];
+    
+    $ch = "WHERE";
+    
+    if($_POST["Submit"]=="Submit"){
+        for($i=0; $i<sizeof($checkbox); $i++) {
+            $sql .= $ch."`Category` LIKE '%$checkbox[$i]%'"; 
+            $ch = " OR ";
         }
     }
-
-    $find_sql = "$sql";
+    
+    $find_sql = "SELECT * FROM `menu` JOIN category ON (category.CategoryID = menu.CategoryID)".$sql;
     $find_query = mysqli_query($dbconnect, $find_sql);
     $find_rs = mysqli_fetch_assoc($find_query);
     $count = mysqli_num_rows($find_query);
+
 ?>
 
     <!--body start-->
-    <h1>About</h1>
+    <h1>About <?php echo $find_sql ?></h1>
     <div class="gap">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus consequat odio 
