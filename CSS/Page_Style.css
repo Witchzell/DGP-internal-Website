@@ -133,12 +133,16 @@ a #clear {
 }
 
 #search_img_filter {
-    font-family: FontAwesome, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding-top: 12px;
     border-style: none;
     cursor: pointer;
     font-size: 30px;
-    color: #E31919;
+    color: black;
     background-color: #e7e7e7;
+}
+
+#search_img_filter:hover {
+    color: #202020;
 }
 
 .show {display: block;}
@@ -146,6 +150,10 @@ a #clear {
 .label_ch {
     font-size: 20px;
     color: black;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
 }
 
 /*database box*/
