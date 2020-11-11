@@ -227,6 +227,7 @@ a #clear {
     grid-column: 1;
     padding-right: 10%;
     padding: 2px;
+    box-shadow: 6px 5px 6px -3px #00000081
 }
 
 .right {
@@ -237,13 +238,16 @@ a #clear {
     font-weight: normal;
     grid-row: 8;
     grid-column: 2;
+    box-shadow: 6px 5px 6px -3px #00000081
 }
 
 #btns {
+    box-shadow: none;
     border: none;
 }
 
 #btn1, #btn2 {
+    box-shadow: 6px 5px 6px -3px #00000081;
     color: #fdc322;
     background-color: #E31919;
     padding: 1.5%;
